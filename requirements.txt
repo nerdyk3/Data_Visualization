@@ -1,0 +1,5 @@
+django
+django-pandas
+setuptools
+django-excel
+seaborn

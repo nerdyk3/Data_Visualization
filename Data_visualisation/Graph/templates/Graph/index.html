@@ -1,0 +1,307 @@
+{%extends 'Graph/base.html'%}
+  {%block content%}{% load static %}
+  <!-- Start header section -->  
+  <header id="header">
+    <div class="header-inner">
+      <!-- Header image -->
+      <img src="{% static 'assets/images/header-bg.jpg'%}" alt="img">
+      <div class="header-overlay">
+        <div class="header-content">
+        <!-- Start header content slider -->
+        <h2 class="header">Data Visualisation
+          <span>using</span>
+          <span>Python</span><br>
+          Data Science</h2>
+        <!-- End header content slider -->  
+        <!-- Header btn area -->
+        <div class="header-btn-area">
+          <a class="knowmore-btn" href="#">KNOW MORE</a>
+          <a class="download-btn" href="{% url 'app' %}">Test the App</a>
+        </div>
+      </div>
+      </div>      
+    </div>
+  </header>
+  <!-- End header section -->
+
+  
+
+  <!-- Start about section -->
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- Start welcome area -->
+          <div class="welcome-area">
+            <div class="title-area">
+              <h2 class="tittle">Data Visualisation using <span>Python</span></h2>
+              <span class="tittle-line"></span>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  labore et dolore magna aliqua. Ut enim ad minim veniamo laboris nis</p>
+            </div>
+            <div class="welcome-content">
+              <ul class="wc-table">
+                <li>
+                  <div class="single-wc-content wow fadeInUp">
+                    <span class="fa fa-users wc-icon"></span>
+                    <h4 class="wc-tittle">Easy to Use</h4>
+                    <p></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="single-wc-content wow fadeInUp">
+                    <span class="fa fa-sellsy wc-icon"></span>
+                    <h4 class="wc-tittle">Simple Interface</h4>
+                    <p></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="single-wc-content wow fadeInUp">
+                    <span class="fa fa-line-chart wc-icon"></span>
+                    <h4 class="wc-tittle">Quick Result</h4>
+                    <p>At vero eos et accusamus et iusto odio in dignissimos ducimus voluptatum in delenatque </p>
+                  </div>
+                </li>
+                <li>
+                  <div class="single-wc-content wow fadeInUp">
+                    <span class="fa fa-bus wc-icon"></span>
+                    <h4 class="wc-tittle">Free FAQ</h4>
+                    <p>At vero eos et accusamus et iusto odio in dignissimos ducimus voluptatum in delenatque </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- End welcome area -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="about-area">
+            <div class="row">
+              <div class="col-md-5 col-sm-6 col-xs-12">
+                <div class="about-left wow fadeInLeft">
+                  <img src="{% static 'assets/images/about-img.jpg'%}" alt="img">
+                  <a class="introduction-btn" href="#">Introduction</a>
+                </div>
+              </div>
+              <div class="col-md-7 col-sm-6 col-xs-12">
+                <div class="about-right wow fadeInRight">
+                  <div class="title-area">
+                    <h2 class="tittle">About <span>Nex</span> design</h2>
+                    <span class="tittle-line"></span>
+                    <p>ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illotore itatis et quasi architecto beatae vitae dicta sunt explicabo.</p> 
+
+                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores e</p>
+                    <div class="about-btn-area">
+                      <a href="#" class="button button-default" data-text="KNOW MORE"><span>KNOW MORE</span></a>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
+  <!-- End about section -->
+
+  <!-- Start call to action -->
+  <section id="call-to-action">
+    <img src="{% static 'assets/images/call-to-action-bg.png'%}" alt="img">
+    <div class="call-to-overlay">
+      <div class="container">
+        <div class="call-to-content wow fadeInUp">
+          <h2>The most impressive templete you will find</h2>
+          <a href="#" class="button button-default" data-text="GET IT NOW"><span>GET IT NOW</span></a>
+        </div>
+      </div>
+    </div> 
+  </section>
+  <!-- End call to action -->
+
+  <!-- Start Team action -->
+  <section id="team">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="team-area">
+            <div class="title-area">
+              <h2 class="tittle">Meet our team</h2>
+              <span class="tittle-line"></span>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto</p>
+            </div>
+            <!-- Start team content -->
+            <div class="team-content">
+              <ul class="team-grid">
+                <li>
+                  <div class="team-item team-img-1 wow fadeInUp">
+                    <div class="team-info">
+                      <p> I must explain to you how all this mistaken idea of denouncing pleasure n</p>
+                      <a href="#"><span class="fa fa-facebook"></span></a>
+                      <a href="#"><span class="fa fa-twitter"></span></a>
+                      <a href="#"><span class="fa fa-pinterest"></span></a>
+                      <a href="#"><span class="fa fa-rss"></span></a>
+                    </div>
+                  </div>
+                  <div class="team-address">
+                    <p>John Richerd</p>
+                    <span>CEO & Founder</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="team-item team-img-2 wow fadeInUp">
+                    <div class="team-info">
+                      <p> I must explain to you how all this mistaken idea of denouncing pleasure n</p>
+                      <a href="#"><span class="fa fa-facebook"></span></a>
+                      <a href="#"><span class="fa fa-twitter"></span></a>
+                      <a href="#"><span class="fa fa-pinterest"></span></a>
+                      <a href="#"><span class="fa fa-rss"></span></a>
+                    </div>
+                  </div>
+                  <div class="team-address">
+                    <p>MIKE BATTON</p>
+                    <span>Co-founder</span>                  
+                  </div>
+                </li>
+                <li>
+                  <div class="team-item team-img-3 wow fadeInUp">
+                    <div class="team-info">
+                      <p> I must explain to you how all this mistaken idea of denouncing pleasure n</p>
+                      <a href="#"><span class="fa fa-facebook"></span></a>
+                      <a href="#"><span class="fa fa-twitter"></span></a>
+                      <a href="#"><span class="fa fa-pinterest"></span></a>
+                      <a href="#"><span class="fa fa-rss"></span></a>
+                    </div>
+                  </div>
+                  <div class="team-address">
+                    <p>JOHN VICK</p>
+                    <span>Developer</span>
+                  </div>
+                </li>
+                  <li>
+                  <div class="team-item team-img-4 wow fadeInUp">
+                    <div class="team-info">
+                      <p> I must explain to you how all this mistaken idea of denouncing pleasure n</p>
+                      <a href="#"><span class="fa fa-facebook"></span></a>
+                      <a href="#"><span class="fa fa-twitter"></span></a>
+                      <a href="#"><span class="fa fa-pinterest"></span></a>
+                      <a href="#"><span class="fa fa-rss"></span></a>
+                    </div>
+                  </div>
+                  <div class="team-address">
+                    <p>ROB HANSOM</p>
+                    <span>Senior designer</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- End team content -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Start Team action -->
+
+  <!-- Start from blog section -->
+  <section id="from-blog">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="from-blog-area">
+            <div class="title-area">
+              <h2 class="tittle">Our blog</h2>
+              <span class="tittle-line"></span>
+              <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est</p>
+            </div>
+            <!-- From Blog content -->
+            <div class="from-blog-content">
+              <div class="row">
+                <div class="col-md-4">
+                  <article class="single-from-blog">
+                    <figure>
+                      <a href="blog-single.html"><img src="{% static 'assets/images/the-sky.jpg'%}" alt="img"></a>
+                    </figure>
+                    <div class="blog-title">
+                      <h2><a href="blog-single.html">Here is the post title</a></h2>
+                      <p>Posted by <a class="blog-admin" href="#">admin</a> on <span class="blog-date">23rd july 2015</span></p>
+                    </div>
+                    <p>Sed ut perspiciatis unde mnis is te natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis </p>
+                    <div class="blog-footer">
+                      <a href="#"><span class="fa fa-comment"></span>18 Comments</a>
+                      <a href="#"><span class="fa fa-thumbs-o-up"></span>35 Likes</a>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-4">
+                  <article class="single-from-blog">
+                    <figure>
+                      <a href="blog-single.html"><img src="{% static 'assets/images/photographer.jpg'%}" alt="img"></a>
+                    </figure>
+                    <div class="blog-title">
+                      <h2><a href="blog-single.html">Here is the post title</a></h2>
+                      <p>Posted by <a class="blog-admin" href="#">admin</a> on <span class="blog-date">23rd july 2015</span></p>
+                    </div>
+                    <p>Sed ut perspiciatis unde mnis is te natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis </p>
+                    <div class="blog-footer">
+                      <a href="#"><span class="fa fa-comment"></span>18 Comments</a>
+                      <a href="#"><span class="fa fa-thumbs-o-up"></span>35 Likes</a>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-4">
+                  <article class="single-from-blog">
+                    <figure>
+                      <a href="blog-single.html"><img src="{% static 'assets/images/sealand.jpg'%}" alt="img"></a>
+                    </figure>
+                    <div class="blog-title">
+                      <h2><a href="blog-single.html">Here is the post title</a></h2>
+                      <p>Posted by <a class="blog-admin" href="#">admin</a> on <span class="blog-date">23rd july 2015</span></p>
+                    </div>
+                    <p>Sed ut perspiciatis unde mnis is te natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis </p>
+                    <div class="blog-footer">
+                      <a href="#"><span class="fa fa-comment"></span>18 Comments</a>
+                      <a href="#"><span class="fa fa-thumbs-o-up"></span>35 Likes</a>
+                    </div>
+                  </article>
+                </div>
+              </div>    
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End from blog section -->
+
+  <section id="client">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="client-area">
+            <ul class="client-table">
+              <li><img src="{% static 'assets/images/envato.png'%}" alt="client logo"></li>
+              <li><img src="{% static 'assets/images/google.png'%}" alt="client logo"></li>
+              <li><img src="{% static 'assets/images/amazon.png'%}" alt="client logo"></li>
+              <li><img src="{% static 'assets/images/discovery.png'%}" alt="client logo"></li>
+              <li><img src="{% static 'assets/images/envato.png'%}" alt="client logo"></li>
+              <li><img src="{% static 'assets/images/tuenti.png'%}" alt="client logo"></li>
+              <li><img src="{% static 'assets/images/envato.png'%}" alt="client logo"></li>
+              <li><img src="{% static 'assets/images/google.png'%}" alt="client logo"></li>
+              <li><img src="{% static 'assets/images/amazon.png'%}" alt="client logo"></li>
+              <li><img src="{% static 'assets/images/discovery.png'%}" alt="client logo"></li>
+              <li><img src="{% static 'assets/images/envato.png'%}" alt="client logo"></li>
+              <li><img src="{% static 'assets/images/tuenti.png'%}" alt="client logo"></li>                    
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Start Google Map -->
+  <section id="google-map">
+  <iframe src="https://www.google.co.in/maps/place/Greater+Noida+Institute+of+Technology/@28.4605833,77.4932402,17z/data=!3m1!4b1!4m5!3m4!1s0x390cc1ddc0000001:0xfc29bf57c9c17cf1!8m2!3d28.4605833!4d77.4954289" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>  
+  </section>
+  <!-- End Google Map -->
+{% endblock %}
