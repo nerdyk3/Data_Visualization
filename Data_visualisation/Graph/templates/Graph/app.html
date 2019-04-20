@@ -1,31 +1,45 @@
 {%extends 'Graph/base.html'%} {%block content%}{% load static %}
 <!-- main -->
 <div class="container" style="color:#fff">
-        <div class="row">
-          <div class="col-md-3"></div>
-            <div class="col-md-3 ">
-                <form enctype="multipart/form-data" action="" method="post" id="importform">
-                    {% csrf_token %}
-                    <input class="form-control" type="text" placeholder="Description" name="description" />
-                    <br>
-                    <input type="file" class="btn btn-default" id="csvFileInput" name="file" onchange="handleFiles(this.files)" accept=".csv">
-                    <br>
-                    <button type="submit" class="btn btn-info">upload</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-<div class="container">
-  <br>
-  <div class="well well-lg" style="height: 500px;  overflow-y: scroll;">
     <div class="row">
-        <div class="col-lg-11 col-md-12 ">
-            <div id="output">
-            </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3 ">
+            <form>
+                <div class="form-group">
+                    <select class="form-control">
+                        <option>Select the Graph key</option>
+                        {%for i in key%}
+                        <option value={{i}}>{{i}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </form>
         </div>
+        <div class="col-md-3 ">
+        <form enctype="multipart/form-data" action="" method="post" id="importform">
+            {% csrf_token %}
+            {% comment %} <input class="form-control" type="text" placeholder="Description" name="description" />
+            {% endcomment %}
+            <br>
+            <input type="file" class="btn btn-default" id="csvFileInput" name="file" onchange="handleFiles(this.files)"
+                accept=".csv">
+            <br>
+            <button type="submit" class="btn btn-info">upload</button>
+        </form>
     </div>
 </div>
+</div>
+
+<div class="container">
+    <br>
+    <div class="well well-lg" style="height: 500px;  overflow-y: scroll;">
+        <div class="row">
+            <div class="col-lg-11 col-md-12 ">
+                <div id="output">
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
 <!-- //main -->

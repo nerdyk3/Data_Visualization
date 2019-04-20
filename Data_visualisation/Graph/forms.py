@@ -1,15 +1,15 @@
-from django import forms
-from .models import csvimport,graph_axis
+# from django import forms
+# from .models import csvimport,graph_axis
 
 
-class DataForm(forms.ModelForm):
+# class DataForm(forms.ModelForm):
 
-	class Meta:
-		model = csvimport
-		fields = ('description', 'file', )
+# 	class Meta:
+# 		model = csvimport
+# 		fields = ('description', 'file', )
 
-class PlotForm(forms.ModelForm):
+# class PlotForm(forms.ModelForm):
 
-	class Meta:
-		model = graph_axis
-		fields = ('graphName','x_axis', 'hue',)
+# 	class Meta:
+# 		model = graph_axis
+# 		fields = ('graphName','x_axis', 'hue',)
