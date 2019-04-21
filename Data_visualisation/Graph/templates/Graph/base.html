@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Rex : Home</title>
+    <title>Data Visualisation using Python</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/icon" href="{% static 'assets/images/favicon.ico' %}"/>
+    <link rel="shortcut icon" type="image/icon" href="{% static 'assets/images/logo.jpg' %}"/>
     <!-- Font Awesome -->
     <link href="{% static 'assets/css/font-awesome.css'%}" rel="stylesheet">
     <!-- Bootstrap -->
@@ -65,14 +65,13 @@
             <span class="icon-bar"></span>
           </button>
           <!-- LOGO -->                                               
-           <a class="navbar-brand logo" href="index.html"><img src="{% static 'assets/images/logo.jpg'%}" alt="logo"></a>                      
+           <a class="navbar-brand logo" href="/"><img src="{% static 'assets/images/logo.jpg'%}" alt="logo"></a>                      
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul id="top-menu" class="nav navbar-nav main-nav menu-scroll">
             <li class="active"><a href="index.html">Home</a></li>
             <li><a href="#about">ABOUT</a></li> 
-            <li><a href="#team">TEAM</a></li>                                
-            <li><a href="#from-blog">BLOG </a></li>      
+            <li><a href="#team">Mentors</a></li>                                     
           </ul>                            
         </div><!--/.nav-collapse -->
        <div class="search-area">
@@ -87,7 +86,7 @@
   <!-- End menu section -->
 {%block content%}
 
-{%endblock%}
+{%endblock content%}
 
   <!-- Start Footer -->    
   <footer id="footer">
@@ -96,7 +95,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="footer-top-area">             
-                <a class="footer-logo" href="#"><img src="{% static 'assets/images/logo.jpg'%}" alt="Logo"></a>              
+                <a class="footer-logo" href="#"><img src="{% static 'assets/images/logo.jpg'%}" alt="Logo" style="    width: 51%;"></a>              
             </div>
           </div>
         </div>
@@ -128,5 +127,6 @@
   <!-- Custom js -->
   <script type="text/javascript" src="{% static 'assets/js/custom.js'%}"></script>
   <script src="{% static 'assets/js/read-csv.js' %}"></script>
+  {% block scripts %}{% endblock scripts %}
   </body>
 </html>

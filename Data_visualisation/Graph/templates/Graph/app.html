@@ -1,35 +1,57 @@
 {%extends 'Graph/base.html'%} {%block content%}{% load static %}
 <!-- main -->
 <div class="container" style="color:#fff">
-    <div class="row">
+    <div class="row" style="padding-top: 191px;">
         <div class="col-md-3"></div>
-        <div class="col-md-3 ">
-            <form>
+        <form action="{%if key%}{%else%}{%if graph_name%}{%url 'app_page'%}{%endif%}{%endif%}" method="post">
+            {% csrf_token %}
+        <div class="col-md-3" style="padding-bottom: 25%;">
                 <div class="form-group">
-                    <select class="form-control">
+                    <select class="form-control" id="graph_key" name="key_name" >
+                        {%if key%}
                         <option>Select the Graph key</option>
                         {%for i in key%}
-                        <option value={{i}}>{{i}}</option>
+                        <option  value="{{i}}">{{i}}</option>
+                        {% endfor %}
+                        {%else%}
+                         <option  value="{{key_name}}">{{key_name}}</option>
+                        {%endif%}
+                    </select>
+                </div>
+           </div>
+           {%if graph_name%}
+        <div class="col-md-3">
+                <div class="form-group">
+                    <select class="form-control" id="graph_name" name="graph_name" >
+                        <option>Select the Graph Type</option>
+                        {%for i in graph_name%}
+                        <option value="{{i}}">{{i}}</option>
                         {% endfor %}
                     </select>
                 </div>
+        </div>
+        {%endif%}
+        <div>
+       <button class="button download-btn" type="submit" style="color: #000;padding: 11px 28px;border: 2px solid #000;">Click to upload Data</button></div>
+
+         </form>
+        
+     </div>
+        <!-- <div class="col-md-3 ">
+            <form enctype="multipart/form-data" action="" method="post" id="importform">
+                {% csrf_token %}
+                {% comment %} <input class="form-control" type="text" placeholder="Description" name="description" />
+                {% endcomment %}
+                <br>
+                <input type="file" class="btn btn-default" id="csvFileInput" name="file"
+                    onchange="handleFiles(this.files)" accept=".csv">
+                <br>
+                <button type="submit" class="btn btn-info">upload</button>
             </form>
         </div>
-        <div class="col-md-3 ">
-        <form enctype="multipart/form-data" action="" method="post" id="importform">
-            {% csrf_token %}
-            {% comment %} <input class="form-control" type="text" placeholder="Description" name="description" />
-            {% endcomment %}
-            <br>
-            <input type="file" class="btn btn-default" id="csvFileInput" name="file" onchange="handleFiles(this.files)"
-                accept=".csv">
-            <br>
-            <button type="submit" class="btn btn-info">upload</button>
-        </form>
-    </div>
+    </div> -->
 </div>
-</div>
-
+<!-- 
 <div class="container">
     <br>
     <div class="well well-lg" style="height: 500px;  overflow-y: scroll;">
@@ -40,6 +62,32 @@
             </div>
         </div>
     </div>
-</div>
-{% endblock %}
+</div> -->
+{% endblock content %}
+{% block scripts %}
+<!-- <script type="text/javascript">
+    $(document).ready(function(e){
+        $("#graph_name").on('click',function(){
+            var key_name = $('#graph_name').val();
+            var key_type = $('#graph_type').val();
+            console.log(e);
+            $.ajax({
+                url:'{%url 'app'%}',
+                dataType: 'json',
+                type:"post",
+                data:{
+                    key_type:key_type,
+                    key_name:key_name,
+                    csrfmiddlewaretoken: '{{ csrf_token }}',
+                },
+                success:function(graph_names){
+                    window.href='/';
+                    // $('#graph_key_name').show();
+                    // console.log(graph_names)
+                },
+            })
+        });
+    });
+</script> -->
+{% endblock scripts %}
 <!-- //main -->

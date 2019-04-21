@@ -1,0 +1,29 @@
+{%extends 'Graph/base.html'%} {%block content%} {% load static %}
+<form action="" class="form" method="POST" style="color: #000;padding-top: 140px;">
+  {%csrf_token%}
+    <div class="row" >
+      <div class="col-md-3"></div>
+    <div class="col-md-3">
+        <select class="form-control" name="x_axis">
+            <option value="">Please select X-axis</option>
+            {%for x in y%}
+            <option value="{{x}}">{{x}}</option>
+            {% endfor %}
+        </select>
+      </div>
+        <div class="col-md-3">
+        <select class="form-control" name="hue">
+            <option value="">Please select Y-axis</option>
+            {%for x1 in y%}
+            <option value="{{x1}}">{{x1}}</option>
+            {% endfor %}
+        </select>
+    </div>
+</div>
+<br>
+<div class="row" style="padding-bottom: 25%">
+    <div class="col-md-5"></div>
+  <button class="btn btn-primary">Submit</button>
+</div>
+</form>
+{%endblock%}

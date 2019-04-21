@@ -1,0 +1,52 @@
+
+{%extends 'Graph/base.html'%} {%block content%}{% load static %}
+<div class="container" style="color:#fff">
+    <div class="row">
+        {%if graph_detail%}
+        <div class="col-md-12" style="color: #000;padding-top: 40px;">
+                {%for i in graph_detail %}
+                    <p>Your selected : <b>{{i.key_name}}</b></p>
+                    <p>Your are drawing graph : <b>{{i.graph_name}}</b></p>
+                    <p>Description:<b>{%if i.description%}{{i.description}}{%else%}<span style="color: #ee2345">No Data Found</span>{%endif%}</b></p>
+
+                {%endfor%}
+        </div>
+        {%endif%}
+    </div>
+        <div class="row" >
+            <div class="col-md-9 ">
+                <form enctype="multipart/form-data" action="{%url 'read_file'%}" method="post" id="importform" style="float: right;text-align: center;">
+                    {% csrf_token %}
+                    {%if keyname == 'NetworkX'%}
+                        {%if graphname == 'dodecahedral_graph'%}
+                        <input type="text">
+                        <p style="color:#000">Example:[[2,3,4,5,6],[8,1,0,19,18,17,16,15,14,7],[9,10,11,12,13]]</p>
+                        {%else%}
+                        <input type="number"/>
+                    {%endif%}
+                    {%else%}
+                    <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Description" name="description" />
+                    </div>
+                    <div class="form-group">
+                    <input type="file" class="btn btn-default form-control" id="csvFileInput" name="file" onchange="handleFiles(this.files)" accept=".csv">
+                    </div>
+                    {%endif%}
+                    <button type="submit" class="btn btn-default" >upload</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<div class="container">
+  <br>
+  <div class="well well-lg" style="height:300px;  overflow-y: scroll;">
+    <div class="row">
+        <div class="col-lg-11 col-md-12 ">
+            <div id="output">
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
