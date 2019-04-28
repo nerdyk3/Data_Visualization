@@ -36,7 +36,6 @@ def file(request):
 def app(request):
 	if request.method == "POST":
 		form = Graph_nameForm(request.POST)
-		print(request.POST.get('graph_name'))
 		key_name = request.POST.get('key_name')
 		graph_name = Graph_name.objects.filter(key_name__Key_name = key_name)
 		return render(request,'Graph/app.html',{'key_name':key_name,'graph_name':graph_name})
