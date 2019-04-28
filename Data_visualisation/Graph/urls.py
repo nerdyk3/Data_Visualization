@@ -9,5 +9,6 @@ urlpatterns = [
     path('app/read/',views.ReadDoc,name = 'read_file'),
     path('suggestion/',views.suggestion,name = 'suggestion'),
     path('networkx/',views.networkx,name = 'networkx'),
+    path('graphview/',views.graphView,name = 'graphview'),
     # path('about-me/',views.aboutme,name='about-me'),
 ]

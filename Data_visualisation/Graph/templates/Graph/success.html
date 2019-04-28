@@ -9,7 +9,7 @@
             {%endif%}
     </div>
 </div>
-<form action="" class="form" method="POST" style="color: #000;">
+<form action="{%url 'graphview'%}" class="form" method="POST" style="color: #000;">
   {%csrf_token%}
     <div class="row" >
       <div class="col-md-3"></div>
@@ -22,7 +22,7 @@
         </select>
       </div>
         <div class="col-md-3">
-        <select class="form-control" name="hue">
+        <select class="form-control" name="y_axis">
             <option value="">Please select Y-axis</option>
             {%for x1 in y%}
             <option value="{{x1}}">{{x1}}</option>

@@ -104,6 +104,244 @@ def networkx(request):
 			nx.draw(G)
 		return mlt.show()
 
+def graphView(request):
+	if request.method == "POST":
+		if request.session['keyname'] == 'SeaBorn':
+			if request.session['graphname'] == "JointGrid.plot_marginals":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "JointGrid.plot_joint":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "JointGrid.plot":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "JointGrid":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "PairGrid.map_upper":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "PairGrid.map_lower":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "PairGrid.map_offdiag":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "PairGrid.map_diag":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "PairGrid.map_diag":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "PairGrid.map":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "FacetGrid.map_dataframe":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "FacetGrid.map":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "FacetGrid":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "clustermap":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "PairGrid":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "residplot":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "regplot":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "lmplot":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "rugplot":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "kdeplot":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "distplot":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "pairplot":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "jointplot":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "countplot":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "barplot":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "pointplot":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "boxenplot":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "violinplot":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "boxplot":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "swarmplot":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "stripplot":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "lineplot":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "catplot":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "scatterplot":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "relplot":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			else:
+				return redirect('/suggestion/')
+		if request.session['keyname'] == 'matplotlib':
+			if request.session['graphname'] == "angle_spectrum":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "annotate":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			if request.session['graphname'] == "acorr":
+				x_axis = request.POST.get('x_axis')
+				y_axis = request.POST.get('y_axis')
+				mlt.subplots(figsize=(10,7))
+				sys.countplot(x=x_axis,hue=y_axis, data=f).set_title(request.session['graphname'])
+				return mlt.show()
+			else:
+				return redirect('/suggestion/')
+
+
 def ReadDoc(request):
 	if request.method == "POST":
 		if request.session['keyname'] == 'NetworkX':
