@@ -9,7 +9,7 @@
                 <div class="form-group">
                     <select class="form-control" id="graph_key" name="key_name" >
                         {%if key%}
-                        <option>Select the Graph key</option>
+                        <option>Select the Graph API</option>
                         {%for i in key%}
                         <option  value="{{i}}">{{i}}</option>
                         {% endfor %}
@@ -23,7 +23,7 @@
         <div class="col-md-3">
                 <div class="form-group">
                     <select class="form-control" id="graph_name" name="graph_name" >
-                        <option>Select the Graph Type</option>
+                        <option>Select the Graph API</option>
                         {%for i in graph_name%}
                         <option value="{{i}}">{{i}}</option>
                         {% endfor %}

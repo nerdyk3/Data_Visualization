@@ -15,11 +15,11 @@
     </div>
         <div class="row" >
             <div class="col-md-9 ">
-                <form enctype="multipart/form-data" action="{%url 'read_file'%}" method="post" id="importform" style="float: right;text-align: center;">
+                <form enctype="multipart/form-data" action="{%if keyname == 'NetworkX'%}{%url 'networkx'%}{%else%}{%url 'read_file'%}{%endif%}" method="post" id="importform" style="float: right;text-align: center;">
                     {% csrf_token %}
                     {%if keyname == 'NetworkX'%}
                         {%if graphname == 'dodecahedral_graph'%}
-                        <input type="text">
+                        <input type="text" name="dodecahedral_graph" style="color: black;">
                         <p style="color:#000">Example:[[2,3,4,5,6],[8,1,0,19,18,17,16,15,14,7],[9,10,11,12,13]]</p>
                         {%else%}
                         <input type="number"/>
@@ -32,7 +32,7 @@
                     <input type="file" class="btn btn-default form-control" id="csvFileInput" name="file" onchange="handleFiles(this.files)" accept=".csv">
                     </div>
                     {%endif%}
-                    <button type="submit" class="btn btn-default" >upload</button>
+                    <button type="submit" class="btn btn-default" >{%if keyname == 'NetworkX'%}show graph{%else%}select axis{%endif%}</button>
                 </form>
             </div>
         </div>

@@ -1,0 +1,29 @@
+{%extends 'Graph/base.html'%}
+  {%block content%}{% load static %}
+
+<div class="cointainer">
+	<div class="row">
+		<div class="col-md-3"> </div>
+        <div class="col-md-6">
+          <div class="contact-right wow fadeInRight">
+            <h2>Send a Suggestion</h2>
+
+            <form action="{%url 'suggestion'%}" method="POST" class="contact-form">
+              {%csrf_token%}
+              <div class="form-group">                
+                <input type="text" name="name" class="form-control" placeholder="Name">
+              </div>
+              <div class="form-group">                
+                <input type="email" name="email" class="form-control" placeholder="Enter Email">
+              </div>              
+              <div class="form-group">
+                <textarea class="form-control" name="suggestion"></textarea>
+              </div>
+              <button type="submit" data-text="SUBMIT" class="button button-default"><span>SUBMIT</span></button>
+            </form>
+          </div>
+        </div>
+	</div>
+</div>
+
+  {%endblock content%}

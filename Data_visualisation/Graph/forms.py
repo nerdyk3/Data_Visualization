@@ -1,6 +1,6 @@
 from django import forms
 from .models import csvimport,graph_axis
-from .models import Graph_name
+from .models import Graph_name, suggestion
 
 class DataForm(forms.ModelForm):
 
@@ -19,3 +19,7 @@ class Graph_nameForm(forms.ModelForm):
 		model = Graph_name
 		fields = ('key_name','graph_name',)
 
+class suggestionForm(forms.ModelForm):
+	class Meta:
+		model = suggestion
+		fields = ('name','email','suggestion',)

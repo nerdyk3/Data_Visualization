@@ -1,5 +1,15 @@
 {%extends 'Graph/base.html'%} {%block content%} {% load static %}
-<form action="" class="form" method="POST" style="color: #000;padding-top: 140px;">
+<div class="container">
+    <div class="row">
+         {%if keyname%}
+            <div class="col-md-12" style="color: #000;padding-top: 40px;">
+                    <p>Your selected : <b>{{keyname}}</b></p>
+                    <p>Your are drawing graph : <b>{{graphname}}</b></p>
+            </div>
+            {%endif%}
+    </div>
+</div>
+<form action="" class="form" method="POST" style="color: #000;">
   {%csrf_token%}
     <div class="row" >
       <div class="col-md-3"></div>

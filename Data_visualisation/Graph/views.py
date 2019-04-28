@@ -1,13 +1,14 @@
 from django.shortcuts import render, redirect,HttpResponse
 from django.http import JsonResponse
 from .models import Graph_Key,Graph_name, csvimport, graph_axis,GraphType
-from .forms import Graph_nameForm,DataForm,PlotForm
+from .forms import Graph_nameForm,DataForm,PlotForm,suggestionForm
 import pandas as pd
 import pdb
 from django.template import Context, Template
 import seaborn as sys
 import matplotlib.pyplot as mlt
 from .serializers import Graph_KeySerializer,Graph_nameSerializer
+import networkx as nx
 # import cufflinks as cf
 
 # Create your views here.
@@ -49,20 +50,76 @@ def app_page(request):
 		form = Graph_nameForm(request.POST)
 		keyname = request.POST.get('key_name')
 		graphname = request.POST.get('graph_name')
+		request.session['keyname'] = keyname
+		request.session['graphname'] = graphname
 		graph_detail = Graph_name.objects.filter(graph_name = graphname) 
 		return render(request,'Graph/file.html',{'graph_detail':graph_detail,'keyname':keyname,'graphname':graphname})
 
+def networkx(request):
+	if request.method == "POST":
+		if request.session['graphname'] == 'dodecahedral_graph':
+			data_network = request.POST.get('dodecahedral_graph')
+			G = nx.dodecahedral_graph()
+			shells =  data_network
+			nx.draw(G)
+		if request.session['graphname'] == 'lollipop_graph':
+			data_network = request.POST.get('lollipop_graph')
+			G = nx.dodecahedral_graph()
+			shells =  data_network
+			nx.draw(G)
+		if request.session['graphname'] == 'grid_2d_graph':
+			data_network = request.POST.get('grid_2d_graph')
+			G = nx.dodecahedral_graph()
+			shells =  data_network
+			nx.draw(G)
+		if request.session['graphname'] == 'house_graph':
+			data_network = request.POST.get('house_graph')
+			G = nx.dodecahedral_graph()
+			shells =  data_network
+			nx.draw(G)
+		if request.session['graphname'] == 'star_graph':
+			data_network = request.POST.get('star_graph')
+			G = nx.dodecahedral_graph()
+			shells =  data_network
+			nx.draw(G)
+		if request.session['graphname'] == 'cycle_graph':
+			data_network = request.POST.get('cycle_graph')
+			G = nx.dodecahedral_graph()
+			shells =  data_network
+			nx.draw(G)
+		if request.session['graphname'] == 'path_graph':
+			data_network = request.POST.get('path_graph')
+			G = nx.dodecahedral_graph()
+			shells =  data_network
+			nx.draw(G)
+		if request.session['graphname'] == 'petersen_graph':
+			data_network = request.POST.get('petersen_graph')
+			G = nx.dodecahedral_graph()
+			shells =  data_network
+			nx.draw(G)
+		if request.session['graphname'] == 'cubical_graph':
+			data_network = request.POST.get('cubical_graph')
+			G = nx.dodecahedral_graph()
+			shells =  data_network
+			nx.draw(G)
+		return mlt.show()
+
 def ReadDoc(request):
 	if request.method == "POST":
-		x = DataForm(request.POST, request.FILES)
-		if x.is_valid():
-			data = x.save(commit=False)
-			#data.save()
-			FileRead = data.file
-			ReadCSV = pd.read_csv(FileRead)
-			KeyCSV = ReadCSV.keys()
-			ReadFile(data,ReadCSV)
-			return render(request,'Graph/success.html',{'y':ReadCSV,'r':GraphType.objects.all()})
+		if request.session['keyname'] == 'NetworkX':
+			pass
+		else:
+			x = DataForm(request.POST, request.FILES)
+			if x.is_valid():
+				data = x.save(commit=False)
+				#data.save()
+				FileRead = data.file
+				ReadCSV = pd.read_csv(FileRead)
+				KeyCSV = ReadCSV.keys()
+				ReadFile(data,ReadCSV)
+				keyname = request.session['keyname']
+				graphname = request.session['graphname']
+				return render(request,'Graph/success.html',{'y':ReadCSV,'keyname':keyname,'graphname':graphname})
 
 	else:
 		x = DataForm()
@@ -106,5 +163,18 @@ def Graphtype(typegarph):
 	# 	mlt.subplots(figsize=(10,7))
 	# 	sys.barplot(x=typegarph.x_axis,y=typegarph.hue,hue=typegarph.hue, data=f).set_title(z.description)
 	# 	return mlt.show()
-def aboutme(request):
-	return render(request,'placio_month/about-me.html')
+
+
+
+
+def suggestion(request):
+	if request.method == "POST":
+		x = suggestionForm(request.POST)
+		if x.is_valid():
+			data = x.save(commit=False)
+			data.save()
+			return HttpResponse('Thank You for make suggestion with us, we will contact you shortly.')
+
+	else:	
+		x = suggestionForm()
+		return render(request,'Graph/suggestion.html')

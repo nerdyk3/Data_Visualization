@@ -35,3 +35,11 @@ class Graph_name(models.Model):
 
 	def __str__(self):
 		return self.graph_name
+
+class suggestion(models.Model):
+	name = models.CharField(max_length = 200)
+	email = models.EmailField(max_length = 200)
+	suggestion = models.TextField()
+
+	def __str__(self):
+		return self.name
